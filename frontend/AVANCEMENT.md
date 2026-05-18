@@ -10,7 +10,7 @@
 |--------|--------|---------|------|
 | M01 — Schemas TypeScript | ✅ Terminé | `feature/frontend-schemas` | 11/05/2026 |
 | M02 — Mocks API | ✅ Terminé | `feature/frontend-mocks` | 18/05/2026 |
-| M03 — Client API | ⏳ À faire | `feature/frontend-api-client` | — |
+| M03 — Client API | ✅ Terminé | `feature/frontend-api-client` | 18/05/2026 |
 | M04 — UI Foundation | ⏳ À faire | `feature/frontend-ui-foundation` | — |
 | M05 — Auth | ⏳ À faire | `feature/frontend-auth` | — |
 | M06 — Dashboard | ⏳ À faire | `feature/frontend-dashboard` | — |
