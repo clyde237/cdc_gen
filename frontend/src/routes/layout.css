@@ -5,3 +5,37 @@
 @plugin "daisyui" {
     themes : light --default, dark --prefersdark;
 }
+
+@theme {
+    /* Couleurs principales */
+    --color-primary : #2563eb;
+    --color-primary-hover : #1d4ed8;
+    --color-secondary : #7c3aed;
+
+    /* Couleur fonctionnelles */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-info: #3b82f6;
+
+    /* couleurs de fond et surface */
+    --color-background: #f9fafb;
+    --color-surface: #ffffff;
+
+    /* Couleurs de texte et bordures */
+    --color-text-dark: #111827;
+    --color-text-muted: #4b5563;
+    --color-outline: #d1d5db;
+    --color-outline-light: #e5e7eb;
+
+    /* Typographie */
+    --font-sans: "Inter", sans-serif;
+
+    /* Arrondis (border Raduis) */
+    --radius-sm: 4px;
+    --radius-DEFAULT: 8px; /* 0.5rem - Arrondi principal */
+    --radius-pill: 9999px;
+
+    /* Ombres (Elévation) */
+    --shadow-ambient : 0px 4px 6px -1px rgb(0 0 0 / 0.5);
+}
