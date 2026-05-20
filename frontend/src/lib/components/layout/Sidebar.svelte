@@ -5,8 +5,11 @@
 
 <aside class="w-64 bg-surface border-r border-outline-light h-screen hidden md:flex flex-col">
   <div class="p-6 flex items-center gap-3 border-b border-outline-light">
-    <div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white font-bold">C</div>
-    <span class="font-bold text-xl text-text-dark">CDC-Gen</span>
+    <img
+					src="/ise_logo.png"
+					alt="Logo KTK-ISE"
+					class=""
+				/>
   </div>
 
   <nav class="flex-1 p-4 flex flex-col gap-2">

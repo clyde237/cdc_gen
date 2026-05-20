@@ -1,6 +1,6 @@
 # CDC-Gen Frontend — Récapitulatif d'Avancement
 
-> Dernière mise à jour : 19/05/2026
+> Dernière mise à jour : 20/05/2026
 
 ---
 
@@ -12,7 +12,7 @@
 | M02 — Mocks API | ✅ Terminé | `feature/frontend-mocks` | 18/05/2026 |
 | M03 — Client API | ✅ Terminé | `feature/frontend-api-client` | 18/05/2026 |
 | M04 — UI Foundation | ✅ Terminé | `feature/frontend-ui-foundation` | 18/05/2026 |
-| M05 — Auth | ⏳ À faire | `feature/frontend-auth` | — |
+| M05 — Auth | ✅ Terminé | `feature/frontend-auth` | 19/05/2026 |
 | M06 — Dashboard | ⏳ À faire | `feature/frontend-dashboard` | — |
 | M07 — Liste Projets | ⏳ À faire | `feature/frontend-project-list` | — |
 | M08 — Formulaire Projet | ⏳ À faire | `feature/frontend-project-form` | — |
@@ -217,16 +217,16 @@ frontend/src/
 
 ---
 
-## Prochaine étape : M05 — Auth
+## ✅ M05 — Auth
 
-**Branche à créer :** `feature/frontend-auth`
+**Branche :** `feature/frontend-auth`
 **Destination :** `frontend/src/routes/auth/` + `frontend/src/lib/stores/auth.store.svelte.ts`
 
 ### Objectif
 
-Créer les pages de connexion et d'inscription avec un layout centré minimaliste. Lier les formulaires au store auth pour gérer la session utilisateur, et mettre en place les guards de navigation (redirection si non connecté).
+Pages de connexion et d'inscription avec un layout centré minimaliste. Liaison des formulaires au store auth pour gérer la session utilisateur, et mise en place des guards de navigation.
 
-### Fichiers à créer
+### Fichiers créés
 
 ```
 frontend/src/
@@ -242,7 +242,7 @@ frontend/src/
         └── auth.store.svelte.ts ← login(), register(), logout(), session reactive
 ```
 
-### Comportements attendus
+### Comportements implémentés
 
 - Formulaire login → appel `authApi.login()` → stockage token → redirect `/dashboard`
 - Formulaire register → appel `authApi.register()` → auto-login → redirect `/dashboard`
@@ -250,3 +250,50 @@ frontend/src/
 - Gestion des erreurs API inline (mauvais mot de passe, email déjà utilisé)
 - États de chargement sur les boutons (spinner via `Button` avec prop `loading`)
 - Lien "Mot de passe oublié" → page à implémenter ultérieurement (placeholder)
+
+---
+
+## ✅ M06 — Dashboard
+
+**Branche :** `feature/frontend-dashboard`  
+**Destination dans le projet :** `frontend/src/routes/(app)/dashboard/`  
+
+### Fichiers créés / modifiés
+
+```
+frontend/src/routes/(app)/
+├── +layout.svelte          ← Layout de groupe injectant automatiquement l'AppShell
+└── dashboard/
+└── +page.svelte        ← Tableau de bord principal connecté à projectsApi.list()
+```
+### Décisions d'architecture prises
+
+- **Layout de groupe `(app)`** : Utilisation du mécanisme avancé de SvelteKit pour encapsuler les pages applicatives (`dashboard`, `projects`, `settings`) dans l'`AppShell` sans répéter de code et sans altérer la clarté des URLs.
+- **Règle stricte des 4 états de chargement** : 
+  - *Idle* : Initialisation.
+  - *Loading* : Écran de chargement moderne (Squelettes / Skeletons clignotants) simulant la latence réseau.
+  - *Error* : Rendu visuel propre avec l'icône `@lucide/svelte` `TriangleAlert` et un bouton d'action pour ré-exécuter l'appel en cas d'échec.
+  - *Success* : Affichage de la grille ou d'un état vide (*Empty State*) si la liste de projets est vide.
+- **Alignement strict des variables de données** : Passage complet aux clés exactes du modèle PostgreSQL de ton projet : `project.name` pour le titre, `project.lastModif` pour la date, et `project.projetType` string.
+- **Correction du typage des Badges** : Résolution stricte des contraintes de variantes TypeScript du composant `Badge`.
+
+---
+
+## Fichiers de référence
+
+| Fichier | Description |
+|---------|-------------|
+| `FRONTEND_MODULES.md` | Découpage complet en 19 modules avec dépendances et durées |
+| `CDC_Gen_Project_Guide.md` | Guide complet du projet (vision, architecture, contrat API) |
+| `DESIGN.md` | Tokens du design system (couleurs, typographie, élévation) |
+
+---
+
+## Prochaine étape : M07 — Liste Projets
+
+**Branche à créer :** `feature/frontend-project-list`  
+**Destination :** `frontend/src/routes/(app)/projects/`  
+
+### Objectif
+
+Développer la page principale `/projects` permettant de lister l'exhaustivité des documents de l'utilisateur. Ce module inclura l'intégration d'une barre de recherche textuelle réactive, un système de filtrage par type de projet (`projetType`) et des options de tri chronologique basées sur `lastModif`.
