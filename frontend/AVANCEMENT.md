@@ -13,7 +13,7 @@
 | M03 — Client API | ✅ Terminé | `feature/frontend-api-client` | 18/05/2026 |
 | M04 — UI Foundation | ✅ Terminé | `feature/frontend-ui-foundation` | 18/05/2026 |
 | M05 — Auth | ✅ Terminé | `feature/frontend-auth` | 19/05/2026 |
-| M06 — Dashboard | ⏳ À faire | `feature/frontend-dashboard` | — |
+| M06 — Dashboard | ✅ Terminé | `feature/frontend-dashboard` | 20/05/2026 |
 | M07 — Liste Projets | ⏳ À faire | `feature/frontend-project-list` | — |
 | M08 — Formulaire Projet | ⏳ À faire | `feature/frontend-project-form` | — |
 | M09 — Bundles/Pricing | ⏳ À faire | `feature/frontend-bundle-page` | — |
