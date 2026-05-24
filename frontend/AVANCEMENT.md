@@ -14,7 +14,7 @@
 | M04 — UI Foundation | ✅ Terminé | `feature/frontend-ui-foundation` | 18/05/2026 |
 | M05 — Auth | ✅ Terminé | `feature/frontend-auth` | 19/05/2026 |
 | M06 — Dashboard | ✅ Terminé | `feature/frontend-dashboard` | 20/05/2026 |
-| M07 — Liste Projets | ⏳ À faire | `feature/frontend-project-list` | — |
+| M07 — Liste Projets | ✅ Terminé | `feature/frontend-project-list` | 20/05/2026 |
 | M08 — Formulaire Projet | ⏳ À faire | `feature/frontend-project-form` | — |
 | M09 — Bundles/Pricing | ⏳ À faire | `feature/frontend-bundle-page` | — |
 | M10 — Paramètres | ⏳ À faire | `feature/frontend-settings` | — |
@@ -279,6 +279,18 @@ frontend/src/routes/(app)/
 
 ---
 
+## ✅ M07 — Liste Projets
+
+**Branche :** `feature/frontend-project-list`  
+**Destination dans le projet :** `frontend/src/routes/(app)/projects/`  
+
+### Comportements implémentés
+
+- **Double vue** : Ajout d'une vue Tableau liste (par défaut) et d'une vue Grille de cartes, contrôlées par des boutons d'icônes (`List`, `LayoutGrid`) basculés à l'extrême droite du bandeau.
+- **Barre de contrôle hautement optimisée** : Alignement sur une seule ligne (sur desktop) combinant une barre de recherche textuelle réactive (prenant l'espace restant) et des sélecteurs de filtrage/tri.
+- **Véritable Tableau Paginé** : Affichage sous forme de `<table>` sémantique et élégant avec gestion réactive de la pagination (8 éléments par page) via les Runes Svelte 5 (`$derived`).
+- **Réglementation des 4 états** : Gestion sans faille des états asynchrones (`idle`, `loading` avec squelette adapté, `error` avec icône `@lucide/svelte` `TriangleAlert` et action de réessai, `success` avec empty state contextuel).
+
 ## Fichiers de référence
 
 | Fichier | Description |
@@ -289,11 +301,17 @@ frontend/src/routes/(app)/
 
 ---
 
-## Prochaine étape : M07 — Liste Projets
+## Prochaine étape : M08 — Formulaire Projet
 
-**Branche à créer :** `feature/frontend-project-list`  
-**Destination :** `frontend/src/routes/(app)/projects/`  
+**Branche à créer :** `feature/frontend-project-form`  
+**Destination :** `frontend/src/routes/(app)/projects/` (Via Modale ou Route dédiée)  
 
 ### Objectif
 
-Développer la page principale `/projects` permettant de lister l'exhaustivité des documents de l'utilisateur. Ce module inclura l'intégration d'une barre de recherche textuelle réactive, un système de filtrage par type de projet (`projetType`) et des options de tri chronologique basées sur `lastModif`.
+Mettre en place le tunnel de création d'un nouveau projet afin de configurer le nom, le type de document (`projetType`), le patron (`template`), et le modèle de langage principal (`mainAI_API`). Branchement sur la méthode `projectsApi.create()` et redirection automatique vers l'espace d'édition du document généré.
+"""
+
+with open("AVANCEMENT-v3.md", "w", encoding="utf-8") as f:
+    f.write(content)
+
+print("File AVANCEMENT-v3.md created successfully.")
