@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Environnements virtuels
+env/
+venv/
+.venv/
+
+# Variables secrètes - NE JAMAIS ENVOYER SUR GITHUB
+backend/.env
+*.env
+
+# Base de données locale
+*.db
+*.sqlite3
+
+# Fichiers système Windows
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# Logs
+*.log

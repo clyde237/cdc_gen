@@ -1,0 +1,21 @@
+{
+  "costUnit": "XAF",
+  "bundleCost": 0,
+  "bundlePeriodicity": 1,
+  "bundlePeriodicityUnit": "month",
+  "exportCost": 500,
+  "nbExpNoWatermark": 0,
+  "nbExpNoWatermarkPeriodicity": 1,
+  "nbExpNoWatermarkPeriodicityUnit": "month",
+  "branding": false,
+  "brandingType": "unavailable",
+  "projectHistoryDays": 0,
+  "fullHistory": false,
+  "duplicateProject": false,
+  "nbTemplatesAccorded": 0,
+  "customTemplate": false,
+  "nbUsers": 0,
+  "support": false,
+  "supportHoursDelay": 48,
+  "accessAIsAPIs": false
+}
